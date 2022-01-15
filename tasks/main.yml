@@ -1,0 +1,30 @@
+---
+
+- name: Create Target directory for mcrcon Installation
+  ansible.builtin.file:
+    path: /usr/lib/mcrcon
+    state: directory
+
+- name: print download url
+  debug:
+    msg: "Try to use mcrcon Version from {{ downloadUrl }}"
+
+- name: Download file with checksum url (sha256)
+  get_url:
+    url: "{{ downloadUrl }}"
+    dest: "/usr/lib/mcrcon/{{ downloadUrl | basename }}"
+    checksum: sha256:{{ mcrcon_checksum }}
+  register: mcrcon_archive
+
+- name: Unarchive mcrcon
+  ansible.builtin.unarchive:
+    src: "{{ mcrcon_archive.dest }}"
+    dest: /usr/lib/mcrcon
+    remote_src: true
+  when: mcrcon_archive.changed
+
+- name: Correct mcrcon version selected
+  community.general.alternatives:
+    name: mcrcon
+    link: /usr/bin/mcrcon
+    path: /usr/lib/mcrcon/mcrcon
