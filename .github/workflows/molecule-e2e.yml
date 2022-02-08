@@ -24,4 +24,4 @@ jobs:
          python-version: "${{ matrix.python-version }}"
          architecture: 'x64'
 
-     - uses: gofrolist/molecule-action@v2
+     - uses: gofrolist/molecule-action@v2.2.14
