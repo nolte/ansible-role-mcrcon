@@ -24,6 +24,4 @@ jobs:
          python-version: "${{ matrix.python-version }}"
          architecture: 'x64'
 
-     - uses: nolte/molecule-action@fix/downgread-molecule
-       with:
-         molecule_working_dir: "/home/runner/work/ansible-role-mcrcon/ansible-role-mcrcon" #${{env.GITHUB_REPOSITORY}}
+     - uses: gofrolist/molecule-action@v2.2.14
