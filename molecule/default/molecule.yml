@@ -15,9 +15,10 @@ platforms:
   - name: fedora
     image: fedora:29
   - name: centos7
-    image: centos:7
+    image: quay.io/centos/centos:centos7
   - name: centos8
-    image: centos:8
+    image: quay.io/centos/centos:stream8
+
 provisioner:
   name: ansible
   lint:
