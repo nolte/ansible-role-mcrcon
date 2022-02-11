@@ -14,8 +14,6 @@ platforms:
     image: "ubuntu:focal"
   - name: fedora
     image: fedora:29
-  - name: centos7
-    image: centos:7
   - name: centos8
     image: centos:8
 provisioner:
