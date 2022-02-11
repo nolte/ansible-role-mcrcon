@@ -26,4 +26,4 @@ jobs:
 
      - uses: nolte/molecule-action@fix/downgread-molecule
        with:
-         molecule_working_dir: ${{env.GITHUB_WORKSPACE}}
+         molecule_working_dir: ${{env.GITHUB_REPOSITORY}}
