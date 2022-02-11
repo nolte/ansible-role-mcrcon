@@ -26,4 +26,4 @@ jobs:
 
      - uses: nolte/molecule-action@fix/downgread-molecule
        with:
-         molecule_working_dir: ${{env.GITHUB_REPOSITORY}}
+         molecule_working_dir: "/home/runner/work/ansible-role-mcrcon/ansible-role-mcrcon" #${{env.GITHUB_REPOSITORY}}
