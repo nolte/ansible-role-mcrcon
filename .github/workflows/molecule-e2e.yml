@@ -25,3 +25,5 @@ jobs:
          architecture: 'x64'
 
      - uses: nolte/molecule-action@fix/downgread-molecule
+       with:
+         molecule_working_dir: ${GITHUB_WORKSPACE}
